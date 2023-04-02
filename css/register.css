@@ -1,0 +1,86 @@
+.wrapper {
+  width: 330px;
+  padding: 30px 15px;
+  margin: 50px auto;
+  background-color: #ECEBE9;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+h1 {
+  font-size: 30px;
+  color: #29354B;
+  margin-bottom: 30px;
+}
+
+form input {
+  width: 92%;
+  outline: none;
+  border: 1px solid #A0C8C3;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  background-color: #e4e4e4;
+}
+
+button {
+  font-size: 20px;
+  margin-top: 25px;
+  padding: 10px 0;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  width: 90%;
+  color: #ECEBE9;
+  background-color: #4C8891;
+}
+button:hover {
+  background-color: #29354B;
+  transition: all 0.5s ease;
+}
+
+input:focus {
+  border: 1px solid #29354B;
+}
+
+.terms {
+  margin-top: 7px;
+}
+.terms input {
+  height: 15px;
+  width: 15px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.terms label {
+  font-size: 12px;
+}
+.terms a {
+  color: #262225;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.member {
+  font-size: 12px;
+  margin-top: 20px;
+}
+.member a {
+  color: #262225;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.recover {
+  text-align: right;
+  font-size: 12px;
+  margin: 7px 20px 0 0;
+}
+.recover a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #262225;
+}
+
+/*# sourceMappingURL=register.css.map */

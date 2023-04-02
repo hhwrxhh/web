@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Medication</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/edit_pharmacy.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+		<a href="index.html" class="logo">Pharmacy</a>
+
+		<div class="search">
+			<i class="fa fa-search" aria-hidden="true"></i>
+			<input type="text" name="" placeholder="Search" />
+		</div>
+		<ul class="nav">
+			<li>
+				<a href="products.html" class="fa fa-bars"></a>
+			</li>
+			<li>
+				<a href="cart.html" class="fa fa-shopping-cart"></a>
+			</li>
+			<li>
+				<a href="#" class="fa fa-heart"></a>
+			</li>
+			<li>
+				<a href="user_profile.html" class="fa fa-user"></a>
+			</li>
+		</ul>
+	</header>
+
+    <div class="container-1">
+        <h1>Edit Medication</h1>
+        <form>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" required>
+            </div>
+            <div class="form-group">
+                <label for="photo">Photo:</label>
+                <input type="file" id="photo" name="photo">
+            </div>
+            <div class="form-group">
+                <label for="advantages">Advantages:</label>
+                <textarea id="advantages" name="advantages" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="availability">Availability:</label>
+                <select id="availability" name="availability">
+                    <option value="in-stock">In Stock</option>
+                    <option value="out-of-stock">Out of Stock</option>
+                </select>
+            </div>
+            <button type="submit">Save</button>
+        </form>
+    </div>
+    <footer>
+        <div class="column">
+            <h3>Locations</h3>
+            <ul>
+                <li>Town 1</li>
+                <li>Town 2</li>
+                <li>Town 3</li>
+                <li>Town 4</li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3>Contacts</h3>
+            <ul>
+                <li>Town 1, Country 1, 38900</li>
+                <li>Pharmacy@gmail.com</li>
+                <li>555-100-333</li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3>Common questions</h3>
+            <ul>
+                <li><a href="#" class=""> About Company</a></li>
+                <li><a href="#" class=""> delivery</a></li>
+                <li><a href="#" class=""> Payment</a></li>
+                <li><a href="#" class=""> Certifications</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>User Profile</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/user_profile.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+</head>
+
+<body>
+	<header>
+		<a href="index.html" class="logo">Pharmacy</a>
+
+		<div class="search">
+			<i class="fa fa-search" aria-hidden="true"></i>
+			<input type="text" name="" placeholder="Search" />
+		</div>
+		<ul class="nav">
+			<li>
+				<a href="products.html" class="fa fa-bars"></a>
+			</li>
+			<li>
+				<a href="cart.html" class="fa fa-shopping-cart"></a>
+			</li>
+			<li>
+				<a href="#" class="fa fa-heart"></a>
+			</li>
+			<li>
+				<a href="user_profile.html" class="fa fa-user"></a>
+			</li>
+		</ul>
+	</header>
+
+	<div class="container-1">
+		<div class="profile">
+			<div class="profile-picture">
+				<img src="img/ad/ad_1.jpg" alt="Profile Picture">
+			</div>
+			<div class="profile-info">
+				<h1>Sally Carrera </h1>
+				<p><span class="label">Phone:</span> <span>123-456-7890</span></p>
+				<p><span class="label">Email:</span> <span>example@email.com</span></p>
+			</div>
+		</div>
+		<div class="edit-profile">
+			<h2>Edit Profile</h2>
+			<form>
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name" placeholder="Sally Carrera">
+				<label for="phone">Phone:</label>
+				<input type="tel" id="phone" name="phone" placeholder="123-456-7890">
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" placeholder="example@email.com">
+				<button type="submit">Save Changes</button>
+			</form>
+		</div>
+	</div>
+	<footer>
+		<div class="column">
+			<h3>Locations</h3>
+			<ul>
+				<li>Town 1</li>
+				<li>Town 2</li>
+				<li>Town 3</li>
+				<li>Town 4</li>
+			</ul>
+		</div>
+		<div class="column">
+			<h3>Contacts</h3>
+			<ul>
+				<li>Town 1, Country 1, 38900</li>
+				<li>Pharmacy@gmail.com</li>
+				<li>555-100-333</li>
+			</ul>
+		</div>
+		<div class="column">
+			<h3>Common questions</h3>
+			<ul>
+				<li><a href="#" class=""> About Company</a></li>
+				<li><a href="#" class=""> delivery</a></li>
+				<li><a href="#" class=""> Payment</a></li>
+				<li><a href="#" class=""> Certifications</a></li>
+			</ul>
+		</div>
+	</footer>
+</body>
+
+</html>

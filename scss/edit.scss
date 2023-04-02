@@ -1,0 +1,9 @@
+$aqua_5: #ECEBE9;
+$aqua_4: #A0C8C3;
+$aqua_3: #4C8891;
+$aqua_2: #29354B;
+$aqua_1: #262225;
+
+@mixin shadow{
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}

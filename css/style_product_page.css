@@ -1,0 +1,223 @@
+.container-product {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.product-info {
+  margin-left: 50px;
+  justify-content: center;
+  flex-grow: 1;
+}
+.product-info h1 {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-size: 35px;
+  color: #ECEBE9;
+}
+.product-info .stock {
+  color: #29354B;
+  font-size: 15px;
+  margin: 0 20px 30px 0;
+}
+.product-info .stock a {
+  margin-left: 20px;
+  color: #29354B;
+}
+.product-info .stock a:hover {
+  transform: scale(1.1);
+  color: #ECEBE9;
+  transition: all 0.5s;
+}
+
+.product-page {
+  background-color: #4C8891;
+  border: 2px solid #262225;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.product-image img {
+  width: 100%;
+  display: block;
+  margin-left: 20px;
+}
+
+.product-rating {
+  color: #29354B;
+  margin-bottom: 20px;
+}
+.product-rating span {
+  font-size: 20px;
+}
+
+.product-advantages {
+  margin-bottom: 20px;
+}
+.product-advantages p {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #ECEBE9;
+}
+.product-advantages ul {
+  list-style: none;
+}
+.product-advantages li {
+  color: #ECEBE9;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+.buy-button {
+  border-radius: 10px;
+  background-color: #29354B;
+  color: #ECEBE9;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.buy-button:hover {
+  background-color: #ECEBE9;
+  color: #29354B;
+  transform: scale(1.2);
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  transition: all 0.5s ease;
+}
+
+.product-icons {
+  margin: 30px 0 20px 0;
+  font-size: 25px;
+}
+.product-icons a {
+  color: #29354B;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.product-icons a:hover {
+  color: #ECEBE9;
+  transform: scale(1.2);
+}
+
+.product-description {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.tabs {
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  border: 5px solid #ECEBE9;
+  border-radius: 5px;
+  margin: 0 0 50px 0;
+  color: #ECEBE9;
+  margin: 50px 0;
+}
+
+.tabs__items {
+  display: flex;
+  background-color: #4C8891;
+}
+
+.tabs__item {
+  flex: 0 1 33.33%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  color: #ECEBE9;
+}
+.tabs__item span {
+  font-size: 25px;
+  position: relative;
+  margin: 15px;
+  z-index: 2;
+}
+
+.tabs__block {
+  position: relative;
+  display: none;
+  padding: 20px;
+  font-size: 20px;
+  line-height: 24px;
+}
+.tabs__block::before {
+  content: "";
+  height: 50px;
+  width: 33.33%;
+  position: absolute;
+  top: -50px;
+}
+.tabs__block:target {
+  display: block;
+}
+.tabs__block:nth-child(1) {
+  background-color: #29354B;
+}
+.tabs__block:nth-child(1)::before {
+  background-color: #29354B;
+  left: 0;
+}
+.tabs__block:nth-child(2) {
+  background-color: #29354B;
+}
+.tabs__block:nth-child(2)::before {
+  background-color: #29354B;
+  left: 33.33%;
+}
+.tabs__block:nth-child(3) {
+  background-color: #29354B;
+}
+.tabs__block:nth-child(3)::before {
+  background-color: #29354B;
+  right: 0;
+}
+
+.but-btn {
+  background-color: #29354B;
+  color: #ECEBE9;
+  font-size: 18px;
+  padding: 10px;
+  border: 1px solid #29354B;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.but-btn:hover {
+  background-color: #ECEBE9;
+  color: #262225;
+  border-color: #ECEBE9;
+  transform: scale(1.1);
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  transition: all 0.5s;
+}
+
+@media screen and (max-width: 768px) {
+  .product-image {
+    order: 1;
+    margin-bottom: 1rem;
+  }
+  .product-image img {
+    width: 100%;
+    height: 100%;
+  }
+  .container-product {
+    flex-direction: column;
+    align-items: center;
+  }
+  .product-info {
+    order: 2;
+    text-align: center;
+  }
+  .tabs__item span {
+    display: block;
+    width: 100px;
+    white-space: nowrap;
+    text-align: center;
+    overflow: hidden;
+    font-size: 14px;
+    text-overflow: ellipsis;
+  }
+}
+
+/*# sourceMappingURL=style_product_page.css.map */

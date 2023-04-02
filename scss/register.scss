@@ -1,0 +1,96 @@
+@import 'edit';
+
+.wrapper {
+    width: 330px;
+    padding: 30px 15px;
+    margin: 50px auto;
+    background-color: $aqua_5;
+    border-radius: 10px;
+    text-align: center;
+    @include shadow;
+}
+
+h1 {
+    font-size: 30px;
+    color: $aqua_2;
+    margin-bottom: 30px;
+}
+
+form {
+    input {
+        width: 92%;
+        outline: none;
+        border: 1px solid $aqua_4;
+        padding: 12px 20px;
+        margin-bottom: 10px;
+        border-radius: 20px;
+        background-color: #e4e4e4;
+    }
+}
+
+button {
+    font-size: 20px;
+    margin-top: 25px;
+    padding: 10px 0;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    width: 90%;
+    color: $aqua_5;
+    background-color: $aqua_3;
+
+    &:hover {
+        background-color: $aqua_2;
+        transition: all 0.5s ease;
+    }
+}
+
+input {
+    &:focus {
+        border: 1px solid $aqua_2;
+    }
+}
+
+.terms {
+    margin-top: 7px;
+
+    input {
+        height: 15px;
+        width: 15px;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+    a {
+        color: $aqua_1;
+        font-weight: bold;
+        text-decoration: none;
+    }
+}
+
+.member {
+    font-size: 12px;
+    margin-top: 20px;
+
+    a {
+        color: $aqua_1;
+        font-weight: bold;
+        text-decoration: none;
+    }
+}
+
+.recover {
+    text-align: right;
+    font-size: 12px;
+    margin: 7px 20px 0 0;
+
+    a {
+        text-decoration: none;
+        font-weight: bold;
+        color: $aqua_1;
+    }
+}

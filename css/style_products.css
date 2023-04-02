@@ -1,0 +1,251 @@
+/* General Styles */
+body {
+  background-color: #A0C8C3;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #4C8891;
+}
+header a {
+  font-size: 50px;
+  color: #ECEBE9;
+}
+
+.filters-menu {
+  position: relative;
+  width: 300px;
+  margin-right: 1rem;
+}
+
+.filters-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+.filters-button:hover {
+  background-color: #eee;
+}
+.filters-button:hover + .filters-dropdown {
+  display: block;
+}
+.filters-button:focus {
+  background-color: #eee;
+}
+
+.filters-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  display: none;
+  min-width: 10rem;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+.filters-dropdown label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.filters-dropdown select {
+  display: block;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+.filters-dropdown button {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.filters-dropdown:hover {
+  display: block;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.product-card {
+  flex-basis: calc(33.33% - 1rem);
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #ECEBE9;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  transition: shadow 0.2s ease-in-out;
+}
+.product-card:hover {
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+.product-card a img {
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+.product-card h3 {
+  margin-top: 1rem;
+  font-size: 25px;
+  color: #262225;
+}
+.product-card .price {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #4C8891;
+}
+.product-card button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4C8891;
+  color: #ECEBE9;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.product-card button:hover {
+  background-color: #29354B;
+}
+.product-card .icons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.product-card .icons i {
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.product-card .icons i:hover {
+  color: #3cb371;
+}
+
+.filter {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  z-index: 1;
+  padding: 20px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+.filter h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.filter label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.filter input[type=checkbox] {
+  margin-right: 5px;
+}
+.filter button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #3cb371;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.filter button:hover {
+  background-color: #2e8b57;
+}
+
+.page-btn {
+  margin: 0 auto 80px;
+  text-align: center;
+}
+.page-btn span {
+  font-size: 20px;
+  display: inline-block;
+  border: 1px solid #29354B;
+  border-radius: 10px;
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  cursor: pointer;
+}
+.page-btn span:hover {
+  color: #ECEBE9;
+  background-color: #4C8891;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  transition: all 0.5s;
+}
+
+@media screen and (max-width: 768px) {
+  .product-card {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .product-card .info {
+    width: 100%;
+  }
+  .product-card h3 {
+    font-size: 80%;
+  }
+  .product-card .price {
+    font-size: 80%;
+    margin-bottom: -10px;
+  }
+  .product-card button {
+    font-size: 80%;
+  }
+  .product-card-img {
+    width: 100%;
+  }
+  .filter {
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .filter .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  .filter.show {
+    height: 100%;
+  }
+}
+
+/*# sourceMappingURL=style_products.css.map */
