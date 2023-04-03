@@ -1,260 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Pharmacy</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <header>
-      <a href="index.html" class="logo">Pharmacy</a>
-  
-      <div class="search">
-        <i class="fa fa-search" aria-hidden="true"></i>
-        <input type="text" name="" placeholder="Search" />
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Pharmacy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header>
+    <a href="index.html" class="logo">Pharmacy</a>
+
+    <div class="search">
+      <i class="fa fa-search" aria-hidden="true"></i>
+      <input type="text" name="" placeholder="Search" />
+    </div>
+    <ul class="nav">
+      <li>
+        <a href="products.html" class="fa fa-bars"></a>
+      </li>
+      <li>
+        <a href="cart.html" class="fa fa-shopping-cart"></a>
+      </li>
+      <li>
+        <a href="#" class="fa fa-heart"></a>
+      </li>
+      <li>
+        <a href="user_profile.html" class="fa fa-user"></a>
+      </li>
+    </ul>
+  </header>
+  <main>
+    <!-- START SPECIAL OFFER -->
+    <div class="offer">
+      <div class="content">
+        <h3>Special offer</h3>
+        <h2>Hurry up to buy</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi
+          veritatis exercitationem quia cupiditate labore! Cupiditate ullam
+          dolore aut earum fugiat.
+        </p>
+        <a href="#" class="btn">Learn more</a>
       </div>
-      <ul class="nav">
-        <li>
-          <a href="products.html" class="fa fa-bars"></a>
-        </li>
-        <li>
-          <a href="cart.html" class="fa fa-shopping-cart"></a>
-        </li>
-        <li>
-          <a href="#" class="fa fa-heart"></a>
-        </li>
-        <li>
-          <a href="user_profile.html" class="fa fa-user"></a>
-        </li>
-      </ul>
-    </header>
-    <main>
-      <!-- START SPECIAL OFFER -->
-      <div class="offer">
-        <div class="content">
-          <h3>Special offer</h3>
-          <h2>Hurry up to buy</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi
-            veritatis exercitationem quia cupiditate labore! Cupiditate ullam
-            dolore aut earum fugiat.
-          </p>
-          <a href="#" class="btn">Learn more</a>
-        </div>
+    </div>
+    <!-- END SPECIAL OFFER -->
+    <!-- START SLIDER -->
+    <div class="container">
+      <input type="radio" id="i1" name="images" checked />
+      <input type="radio" id="i2" name="images" />
+      <input type="radio" id="i3" name="images" />
+      <input type="radio" id="i4" name="images" />
+
+      <div class="slide_img" id="one">
+        <img src="img/ad/ad_1.JPG" alt="Ad 1" />
+        <label class="prev" for="i4"><span></span></label>
+        <label class="next" for="i2"><span></span></label>
       </div>
-      <!-- END SPECIAL OFFER -->
-      <!-- START SLIDER -->
-      <div class="container">
-        <input type="radio" id="i1" name="images" checked />
-        <input type="radio" id="i2" name="images" />
-        <input type="radio" id="i3" name="images" />
-        <input type="radio" id="i4" name="images" />
 
-        <div class="slide_img" id="one">
-          <img src="img/ad/ad_1.jpg" />
-
-          <label class="prev" for="i4"><span></span></label>
-          <label class="next" for="i2"><span></span></label>
-        </div>
-
-        <div class="slide_img" id="two">
-          <img src="img/ad/ad_2.jpg" />
-
-          <label class="prev" for="i1"><span></span></label>
-          <label class="next" for="i3"><span></span></label>
-        </div>
-
-        <div class="slide_img" id="three">
-          <img src="img/ad/ad_3.jpg" />
-
-          <label class="prev" for="i2"><span></span></label>
-          <label class="next" for="i4"><span></span></label>
-        </div>
-
-        <div class="slide_img" id="four">
-          <img src="img/ad/ad_4.jpg" />
-
-          <label class="prev" for="i3"><span></span></label>
-          <label class="next" for="i1"><span></span></label>
-        </div>
-
-        <div id="nav_slide">
-          <label for="i1" class="dots" id="dot1"></label>
-          <label for="i2" class="dots" id="dot2"></label>
-          <label for="i3" class="dots" id="dot3"></label>
-          <label for="i4" class="dots" id="dot4"></label>
-        </div>
+      <div class="slide_img" id="two">
+        <img src="img/ad/ad_2.JPG" alt="Ad 2" />
+        <label class="prev" for="i1"><span></span></label>
+        <label class="next" for="i3"><span></span></label>
       </div>
-      <!-- END SLIDER -->
-      <!--  START products -->
-      <div class="products">
-        <h1 class="heading">Latest products</h1>
-        <div class="container-box">
-          <div class="box">
-            <span class="discount">-10%</span>
-            <div class="image">
-              <img src="img/ad/ad_1.jpg" alt="Product" />
-              <div class="icons">
-                <a href="cart.html" class="fa fa-shopping-cart"></a>
-                <a href="#" class="fas fa-heart"></a>
-                <a href="product_page.html" class="buy-btn">Buy</a>
-              </div>
-            </div>
-            <div class="content">
-              <h3>Pills pot</h3>
-              <div class="price">15.11 <span> 20.11 </span></div>
-            </div>
-          </div>
 
-          <div class="box">
-            <span class="discount">-10%</span>
-            <div class="image">
-              <img src="img/ad/ad_1.jpg" alt="Product" />
-              <div class="icons">
-                <a href="cart.html" class="fa fa-shopping-cart"></a>
-                <a href="#" class="fas fa-heart"></a>
-                <a href="product_page.html" class="buy-btn">Buy</a>
-              </div>
-            </div>
-            <div class="content">
-              <h3>Pills pot</h3>
-              <div class="price">15.11 <span> 20.11 </span></div>
-            </div>
-          </div>
+      <div class="slide_img" id="three">
+        <img src="img/ad/ad_3.JPG" alt="Ad 3" />
 
-          <div class="box">
-            <span class="discount">-15%</span>
-            <div class="image">
-              <img src="img/ad/ad_3.jpg" alt="Product" />
-              <div class="icons">
-                <a href="cart.html" class="fa fa-shopping-cart"></a>
-                <a href="#" class="fas fa-heart"></a>
-                <a href="product_page.html" class="buy-btn">Buy</a>
-              </div>
-            </div>
-            <div class="content">
-              <h3>Pills pot</h3>
-              <div class="price">15.11 <span> 20.11 </span></div>
-            </div>
-          </div>
-        </div>
+        <label class="prev" for="i2"><span></span></label>
+        <label class="next" for="i4"><span></span></label>
       </div>
-      <!--  END products -->
-      <!-- START ABOUT -->
-      <div class="about">
-        <h1 class="heading">About Us</h1>
-        <div class="row">
-          <div class="container-video">
-            <video
-              src="video/pexels-cottonbro-5867578.mp4 "
-              loop
-              autoplay
-              muted
-            ></video>
-            <h3>Best online Pharmacy on the market</h3>
+
+      <div class="slide_img" id="four">
+        <img src="img/ad/ad_4.JPG" alt="Ad 4"/>
+
+        <label class="prev" for="i3"><span></span></label>
+        <label class="next" for="i1"><span></span></label>
+      </div>
+
+      <div id="nav_slide">
+        <label for="i1" class="dots" id="dot1"></label>
+        <label for="i2" class="dots" id="dot2"></label>
+        <label for="i3" class="dots" id="dot3"></label>
+        <label for="i4" class="dots" id="dot4"></label>
+      </div>
+    </div>
+    <!-- END SLIDER -->
+    <!--  START products -->
+    <div class="products">
+      <h1 class="heading">Latest products</h1>
+      <div class="container-box">
+        <div class="box">
+          <span class="discount">-10%</span>
+          <div class="image">
+            <img src="img/ad/ad_1.JPG" alt="Product" />
+            <div class="icons">
+              <a href="cart.html" class="fa fa-shopping-cart"></a>
+              <a href="#" class="fas fa-heart"></a>
+              <a href="product_page.html" class="buy-btn">Buy</a>
+            </div>
           </div>
           <div class="content">
-            <h3>Why choose us?</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Molestiae, aliquid et animi aspernatur quos ducimus. Inventore,
-              aliquam? Optio consequuntur sed obcaecati aliquid animi, itaque
-              inventore. Autem sunt esse amet dignissimos?
-            </p>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Molestiae, Autem sunt esse amet dignissimos?
-            </p>
+            <h3>Pills pot</h3>
+            <div class="price">15.11 <span> 20.11 </span></div>
+          </div>
+        </div>
+
+        <div class="box">
+          <span class="discount">-10%</span>
+          <div class="image">
+            <img src="img/ad/ad_1.JPG" alt="Product" />
+            <div class="icons">
+              <a href="cart.html" class="fa fa-shopping-cart"></a>
+              <a href="#" class="fas fa-heart"></a>
+              <a href="product_page.html" class="buy-btn">Buy</a>
+            </div>
+          </div>
+          <div class="content">
+            <h3>Pills pot</h3>
+            <div class="price">15.11 <span> 20.11 </span></div>
+          </div>
+        </div>
+
+        <div class="box">
+          <span class="discount">-15%</span>
+          <div class="image">
+            <img src="img/ad/ad_3.JPG" alt="Product" />
+            <div class="icons">
+              <a href="cart.html" class="fa fa-shopping-cart"></a>
+              <a href="#" class="fas fa-heart"></a>
+              <a href="product_page.html" class="buy-btn">Buy</a>
+            </div>
+          </div>
+          <div class="content">
+            <h3>Pills pot</h3>
+            <div class="price">15.11 <span> 20.11 </span></div>
           </div>
         </div>
       </div>
-      <!-- END ABOUT -->
-
-      <!-- START ICON  -->
-      <div class="container-icons">
-        <div class="icons">
-          <img src="img/icons/benefits/delivery.svg" alt="DELIVERY" />
-          <div class="info">
-            <h3>Free delivery</h3>
-          </div>
+    </div>
+    <!--  END products -->
+    <!-- START ABOUT -->
+    <div class="about">
+      <h1 class="heading">About Us</h1>
+      <div class="row">
+        <div class="container-video">
+          <video src="video/pexels-cottonbro-5867578.mp4 " loop autoplay muted></video>
+          <h3>Best online Pharmacy on the market</h3>
         </div>
-
-        <div class="icons">
-          <img src="img/icons/benefits/best-price.svg" alt="DELIVERY" />
-          <div class="info">
-            <h3>Decent price</h3>
-          </div>
-        </div>
-        <div class="icons">
-          <img
-            src="img/icons/benefits/secure-payment-fill-svgrepo-com.svg"
-            alt="DELIVERY"
-          />
-          <div class="info">
-            <h3>Secure payment</h3>
-          </div>
+        <div class="content">
+          <h3>Why choose us?</h3>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Molestiae, aliquid et animi aspernatur quos ducimus. Inventore,
+            aliquam? Optio consequuntur sed obcaecati aliquid animi, itaque
+            inventore. Autem sunt esse amet dignissimos?
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Molestiae, Autem sunt esse amet dignissimos?
+          </p>
         </div>
       </div>
-      <!-- END ICON  -->
+    </div>
+    <!-- END ABOUT -->
 
-      <!-- START COOPORATION -->
-      <div class="cooporation">
-        <h3>BRANDS</h3>
-        <div class="cooporation__row">
-          <div class="cooporation__element cooporation__element_1">
-            <img src="img/icons/brands/brand_6.png" alt="BRAND 1" />
-          </div>
-          <div class="cooporation__element cooporation__element_1">
-            <img src="img/icons/brands/brand_6.png" alt="BRAND 2" />
-          </div>
-          <div class="cooporation__element cooporation__element_1">
-            <img src="img/icons/brands/brand_6.png" alt="BRAND 3" />
-          </div>
-          <div class="cooporation__element cooporation__element_1">
-            <img src="img/icons/brands/brand_6.png" alt="BRAND 4" />
-          </div>
-          <div class="cooporation__element cooporation__element_1">
-            <img src="img/icons/brands/brand_6.png" alt="BRAND 5" />
-          </div>
+    <!-- START ICON  -->
+    <div class="container-icons">
+      <div class="icons">
+        <img src="img/icons/benefits/delivery.svg" alt="DELIVERY" />
+        <div class="info">
+          <h3>Free delivery</h3>
         </div>
       </div>
-      <!-- END COOPORATION -->
-    </main>
-    <!-- START FOOTER -->
-      <footer>
-        <div class="column">
-          <h3>Locations</h3>
-          <ul>
-            <li>Town 1</li>
-            <li>Town 2</li>
-            <li>Town 3</li>
-            <li>Town 4</li>
-          </ul>
-        </div>
-        <div class="column">
-          <h3>Contacts</h3>
-          <ul>
-            <li>Town 1, Country 1, 38900</li>
-            <li>Pharmacy@gmail.com</li>
-            <li>555-100-333</li>
-          </ul>
-        </div>
-        <div class="column">
-          <h3>Common questions</h3>
-          <ul>
-            <li><a href="#" class=""> About Company</a></li>
-            <li><a href="#" class=""> delivery</a></li>
-            <li><a href="#" class=""> Payment</a></li>
-            <li><a href="#" class=""> Certifications</a></li>
-          </ul>
-        </div>
-      </footer>
 
-      <!-- END FOOTER -->
-  </body>
+      <div class="icons">
+        <img src="img/icons/benefits/best-price.svg" alt="DELIVERY" />
+        <div class="info">
+          <h3>Decent price</h3>
+        </div>
+      </div>
+      <div class="icons">
+        <img src="img/icons/benefits/secure-payment-fill-svgrepo-com.svg" alt="DELIVERY" />
+        <div class="info">
+          <h3>Secure payment</h3>
+        </div>
+      </div>
+    </div>
+    <!-- END ICON  -->
+
+    <!-- START COOPORATION -->
+    <div class="cooporation">
+      <h3>BRANDS</h3>
+      <div class="cooporation__row">
+        <div class="cooporation__element cooporation__element_1">
+          <img src="img/icons/brands/brand_6.png" alt="BRAND 1" />
+        </div>
+        <div class="cooporation__element cooporation__element_1">
+          <img src="img/icons/brands/brand_6.png" alt="BRAND 2" />
+        </div>
+        <div class="cooporation__element cooporation__element_1">
+          <img src="img/icons/brands/brand_6.png" alt="BRAND 3" />
+        </div>
+        <div class="cooporation__element cooporation__element_1">
+          <img src="img/icons/brands/brand_6.png" alt="BRAND 4" />
+        </div>
+        <div class="cooporation__element cooporation__element_1">
+          <img src="img/icons/brands/brand_6.png" alt="BRAND 5" />
+        </div>
+      </div>
+    </div>
+    <!-- END COOPORATION -->
+  </main>
+  <!-- START FOOTER -->
+  <footer>
+    <div class="column">
+      <h3>Locations</h3>
+      <ul>
+        <li>Town 1</li>
+        <li>Town 2</li>
+        <li>Town 3</li>
+        <li>Town 4</li>
+      </ul>
+    </div>
+    <div class="column">
+      <h3>Contacts</h3>
+      <ul>
+        <li>Town 1, Country 1, 38900</li>
+        <li>Pharmacy@gmail.com</li>
+        <li>555-100-333</li>
+      </ul>
+    </div>
+    <div class="column">
+      <h3>Common questions</h3>
+      <ul>
+        <li><a href="#" class=""> About Company</a></li>
+        <li><a href="#" class=""> delivery</a></li>
+        <li><a href="#" class=""> Payment</a></li>
+        <li><a href="#" class=""> Certifications</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- END FOOTER -->
+</body>
+
 </html>
