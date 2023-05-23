@@ -1,0 +1,186 @@
+@import '../edit.scss';
+
+.menu {
+    width: 320px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transition: 0.6s ease;
+
+    &.active {
+        left: 0;
+    }
+}
+
+.blur {
+    width: 100vw;
+    height: 100vh;
+
+    /* backdrop-filter: blur(2px); */
+}
+
+.menu__content {
+    width: 320px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-color: #bbb transparent;
+    transition: all 0.4s;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: aqua;
+        border-radius: 6px;
+        border: 2px solid transparent;
+
+        &:hover {
+            background-color: wheat;
+        }
+    }
+}
+
+.menu__header {
+    font-size: 40px;
+    color: white;
+    padding: 10px;
+    border-bottom: 5px solid wheat;
+    width: 100%;
+    text-align: center;
+}
+
+.menu__ul {
+    li div {
+        color: black;
+        font-size: 16px;
+        text-decoration: none;
+        display: block;
+        padding: 5px 30px;
+        line-height: 60px;
+        text-align: left;
+
+        &:hover {
+            background: $aqua_3;
+            transition: 0.3s ease;
+            @include shadow;
+        }
+    }
+
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu {
+    width: 320px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: 0.6s ease;
+
+    &.active {
+        left: 0;
+    }
+}
+
+.menu__content {
+    width: 320px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-color: #bbb transparent;
+    transition: all 0.4s;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: aqua;
+        border-radius: 6px;
+        border: 2px solid transparent;
+
+        &:hover {
+            background-color: wheat;
+        }
+    }
+}
+
+.menu__header {
+    font-size: 40px;
+    color: white;
+    padding: 10px;
+    border-bottom: 5px solid wheat;
+    width: 100%;
+    text-align: center;
+}
+
+.menu__ul {
+    li div {
+        color: black;
+        font-size: 16px;
+        text-decoration: none;
+        display: block;
+        padding: 5px 30px;
+        line-height: 60px;
+        text-align: left;
+
+        &:hover {
+            background: $aqua_3;
+            transition: 0.3s ease;
+            @include shadow;
+        }
+    }
+
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .menu__content {
+        width: 100%;
+    }
+}
+
+button {
+    color: black;
+
+    &:hover {
+        @include shadow;
+        background-color: $aqua_2;
+        transition: 0.5s ease;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .menu__content {
+        width: 100%;
+    }
+
+}

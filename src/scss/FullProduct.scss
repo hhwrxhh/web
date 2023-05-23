@@ -1,0 +1,272 @@
+@import "../components/edit.scss";
+
+.container-product {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.product-info {
+  h1 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 35px;
+    color: $aqua_5;
+  }
+
+  margin-left: 50px;
+  justify-content: center;
+  flex-grow: 1;
+
+  .stock {
+    color: $aqua_2;
+    font-size: 15px;
+    margin: 0 20px 30px 0;
+
+    a {
+      margin-left: 20px;
+      color: $aqua_2;
+
+      &:hover {
+        transform: scale(1.1);
+        color: $aqua_5;
+        transition: all 0.5s;
+      }
+    }
+  }
+
+  span {
+    margin-left: 5px;
+    margin-right: 10px;
+  }
+
+}
+
+.product-page {
+  background-color: $aqua_3;
+  border: 4px solid $aqua_4;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  @include shadow;
+}
+
+.product-image {
+  img {
+    width: 100%;
+    display: block;
+    margin: 10px 25px;
+    border: 4px solid $aqua_4;
+    
+  }
+}
+
+.product-rating {
+  color: $aqua_2;
+  margin-bottom: 20px;
+
+  span {
+    font-size: 20px;
+  }
+}
+
+.product-advantages {
+  p {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: $aqua_5;
+  }
+  margin-left: 5px;
+  margin-bottom: 20px;
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    color: $aqua_5;
+    margin-left: 30px;
+    margin-bottom: 10px;
+
+    span {
+      margin-left: 5px;
+    }
+  }
+}
+
+.buy-button {
+  border-radius: 10px;
+  background-color: $aqua_2;
+  color: $aqua_5;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 20px;
+  &:hover {
+    background-color: $aqua_5;
+    color: $aqua_2;
+    transform: scale(1.2);
+    @include shadow;
+    transition: all 0.5s ease;
+  }
+}
+
+.product-icons {
+  margin: 30px 0 20px 0;
+  font-size: 25px;
+
+  .smth {
+    margin: 0 10px;
+    line-height: 30px;
+    font-size: 25px;
+    color: $aqua_5;
+
+    &:hover {
+      color: $aqua_2;
+      transition: all 0.5s;
+    }
+  }
+}
+
+.product-description {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.tabs {
+  @include shadow;
+  border: 5px solid $aqua_4;
+  border-radius: 5px;
+  margin: 0 0 50px 0;
+  color: $aqua_5;
+  margin: 50px 0;
+}
+
+.tabs__items {
+  display: flex;
+  background-color: $aqua_3;
+}
+
+.tabs__item {
+  flex: 0 1 33.33%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  color: $aqua_5;
+
+  span {
+    font-size: 25px;
+    position: relative;
+    margin: 15px;
+    z-index: 2;
+  }
+}
+
+.tabs__block {
+  position: relative;
+  display: none;
+  padding: 20px;
+  font-size: 20px;
+  line-height: 24px;
+
+  &::before {
+    content: "";
+    height: 50px;
+    width: 33.33%;
+    position: absolute;
+    top: -50px;
+  }
+
+  &:target {
+    display: block;
+  }
+
+  &:nth-child(1) {
+    &::before {
+      background-color: $aqua_2;
+      left: 0;
+    }
+
+    background-color: $aqua_2;
+  }
+
+  &:nth-child(2) {
+    &::before {
+      background-color: $aqua_2;
+      left: 33.33%;
+    }
+
+    background-color: $aqua_2;
+  }
+
+  &:nth-child(3) {
+    
+    &::before {
+      background-color: $aqua_2;
+      right: 0;
+    }
+    .alteranative_url
+    {
+      background-color: yellow;
+    }
+    p{
+      padding: 10px;
+      color: $aqua_5;
+    }
+    p::hover{
+      color: white;
+    }
+    background-color: $aqua_2;
+  }
+}
+
+.btn {
+  background-color: $aqua_2;
+  color: $aqua_5;
+  font-size: 18px;
+  padding: 10px;
+  border: 1px solid $aqua_2;
+  border-radius: 10px;
+  margin-bottom: 50px;
+
+  &:hover {
+    background-color: $aqua_5;
+    color: $aqua_1;
+    border-color: $aqua_5;
+    @include shadow;
+    transition: all 0.5s;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .product-image {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    order: 1;
+    margin-bottom: 1rem;
+  }
+
+  .container-product {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-info {
+    order: 2;
+    text-align: center;
+  }
+
+  .tabs__item {
+    span {
+      display: block;
+      width: 100px;
+      white-space: nowrap;
+      text-align: center;
+      overflow: hidden;
+      font-size: 14px;
+      text-overflow: ellipsis;
+    }
+  }
+}
