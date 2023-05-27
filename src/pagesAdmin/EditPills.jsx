@@ -8,7 +8,6 @@ const EDIT_URL = "http://127.0.0.1:5000/drug/dosed/";
 
 function EditPills() {
   const routeParams = useParams();
-  console.log(routeParams);
 
   const [dosedName, setDosedName] = React.useState("");
   const [dosedPrice, setDosedPrice] = React.useState("");

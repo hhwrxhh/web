@@ -19,9 +19,6 @@ function Cart() {
         .delete("http://127.0.0.1:5000/cart/clear", {
           headers: { Authorization: `Bearer ${tokenStr}` },
         })
-        .then((response) => {
-          console.log(response);
-        })
         .catch((error) => {
           console.log(error);
         });
@@ -33,7 +30,6 @@ function Cart() {
           headers: { Authorization: `Bearer ${tokenStr}` },
         })
         .then((response) => {
-          console.log(response);
           setObj(response.data);
         })
         .catch((error) => {
@@ -50,7 +46,6 @@ function Cart() {
       })
       .then((response) => {
         setObj([]);
-        console.log(response);
       })
       .catch((error) => {
         console.log(error);

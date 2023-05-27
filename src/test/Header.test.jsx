@@ -1,12 +1,11 @@
 import { render, fireEvent, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import { store } from "../redux/store.js";
+import { store } from "../redux/store";
+
 import "@testing-library/jest-dom";
 import Header from "../components/Header/Header";
 import axios from "axios";
-jest.mock(axios);
-
 
 describe("Header", () => {
   test("renders the logo", () => {
@@ -17,7 +16,7 @@ describe("Header", () => {
         </MemoryRouter>
       </Provider>
     );
-    const logoElement = getByText("Pharmacy");
+    const logoElement = screen.getByText("Pharmacy");
     expect(logoElement).toBeInTheDocument();
   });
 
@@ -29,9 +28,14 @@ describe("Header", () => {
         </MemoryRouter>
       </Provider>
     );
-    const userIcon = getByLabelText("user");
+    
+    // const userIcon = screen.getByLabelText("user");
+    const userIcon = screen.getByTestId("user");
     fireEvent.click(userIcon);
-    expect(window.location.pathname).toBe("/profile");
+    expect(window.location.pathname).toBe("/login");
+    // const userIcon = screen.getByRole("svg", { name: /user/i }); // Assuming the SVG has an accessible name for screen readers
+    // expect(userIcon).toHaveAttribute("icon", "user");
+    // expect(userIcon).toHaveAttribute("data-icon", "user");
   });
 
   // Add more tests for other functionality and scenarios

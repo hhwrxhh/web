@@ -58,7 +58,6 @@ const FullProducts = () => {
           const path = arr[j].image_path;
           arr[j].image_path = url + path;
         }
-        console.log(arr);
         setAlternative(arr);
       })
       .catch((error) => {
@@ -75,7 +74,6 @@ const FullProducts = () => {
         fillInfo(response.data);
       })
       .catch((error) => {
-        console.log("ERRR", error.response.status);
         if (error.response.status === 404) {
           setErrorStatus(404);
         }
@@ -90,7 +88,6 @@ const FullProducts = () => {
     if (tokenStr === null || tokenStr.length === 0) {
       navigate("/login");
     }
-    console.log(tokenStr);
     const product = {
       id: item.dosed_id,
       title: item.dosed_name,

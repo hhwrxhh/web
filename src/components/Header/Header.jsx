@@ -55,7 +55,6 @@ function Header() {
       try {
         const tokenStr = sessionStorage.getItem("token");
         const userType = await checkUser(tokenStr);
-        console.log("User type:", userType);
         if (userType === "admin") {
           setAdmin(true);
           setUser(false);
@@ -66,7 +65,6 @@ function Header() {
           dispatch(insertIcon("right-from-bracket"));
         }
       } catch (error) {
-        console.error("Error:", error);
         // Обробка помилки
       }
     };
@@ -103,6 +101,7 @@ function Header() {
               <FontAwesomeIcon
                 icon={name}
                 onClick={() => handleNavigate(name)}
+                data-testid={name}
               />
             </a>
           </li>

@@ -48,7 +48,6 @@ function Login() {
           headers: { "Content-Type": "application/json" },
         }
       );
-      console.log(response?.data);
       if (response.data.token !== "") {
         sessionStorage.setItem("token", response.data.token);
       }

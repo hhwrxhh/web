@@ -23,7 +23,6 @@ const cartSlice = createSlice({
           return obj.price * obj.count + sum;
         }, 0)
         .toFixed(2);
-      console.log(state.totalPrice);
     },
     minusItem(state, action) {
       const findItem = state.items.find((obj) => obj.id === action.payload.id);

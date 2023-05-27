@@ -32,7 +32,7 @@ function Sidebar() {
           }
         })
         .catch((error) => {
-          console.error("Error fetching categories:", error);
+          console.log("Error fetching categories:", error);
         });
 
       const objCategory = { title: "Category", title_sub: tmpArray };
