@@ -3,7 +3,7 @@ import axios from "axios";
 
 import "../scss/admin.scss";
 
-function Admin() {
+function EditUser() {
   const [users, setUsers] = useState([]);
 
   const fetchUsers = async () => {
@@ -53,4 +53,4 @@ function Admin() {
   );
 }
 
-export default Admin;
+export default EditUser;

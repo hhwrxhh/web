@@ -9,15 +9,12 @@ const iconSlice = createSlice({
   initialState,
   reducers: {
     insertIconsArray(state, action) {
-      console.log(action.payload);
       state.iconObj = action.payload;
     },
     insertIcon(state, action) {
-      console.log(action.payload);
       state.iconObj.push(action.payload);
     },
     deleteIcon(state, action) {
-      console.log(action.payload);
       const index = state.iconObj.findIndex((icon) => icon === action.payload);
       if (index !== -1) {
         state.iconObj.splice(index, 1);
@@ -28,7 +25,6 @@ const iconSlice = createSlice({
         (icon) => icon === action.payload[0]
       );
       state.iconObj[index] = action.payload[1];
-      console.log(state.iconObj);
     },
   },
 });

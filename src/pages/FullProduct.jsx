@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import NotFound from "./NotFound";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { useSelector, useDispatch } from "react-redux";
 import { addItem } from "../redux/slices/cartSlice";
@@ -25,6 +25,7 @@ const FullProducts = () => {
   const [item, setItem] = React.useState("");
   const [errorStatus, setErrorStatus] = React.useState(null);
   const [alternative, setAlternative] = React.useState([]);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   function fillInfo(obj) {
@@ -85,6 +86,11 @@ const FullProducts = () => {
   }
 
   const onClickAdd = () => {
+    const tokenStr = sessionStorage.getItem("token");
+    if (tokenStr === null || tokenStr.length === 0) {
+      navigate("/login");
+    }
+    console.log(tokenStr);
     const product = {
       id: item.dosed_id,
       title: item.dosed_name,
@@ -92,6 +98,33 @@ const FullProducts = () => {
       image: item.image_path,
     };
     dispatch(addItem(product));
+    try {
+      const response = axios.post(
+        "http://127.0.0.1:5000/cart",
+        JSON.stringify({
+          fk_dosed_id: item.dosed_id,
+          price: item.dosed_price,
+          dosed_count: 1,
+        }),
+        {
+          headers: {
+            Authorization: `Bearer ${tokenStr}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+    } catch (err) {
+      if (!err?.response) {
+        alert("No Server Response");
+        return;
+      }
+      if (err.response?.status === 400) {
+        alert("Some fields are empty");
+        return;
+      }
+      alert("Non Valid Data. User with this email already exitst");
+      return;
+    }
   };
   return (
     <div className="container-product">

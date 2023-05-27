@@ -1,9 +1,4 @@
-import axios from "axios";
-import { useSelector, useDispatch } from "react-redux";
-import { insertIconsArray } from "../../redux/slices/iconSLice";
-
-import iconTmp from "../../utils/imports";
-
+const axios = require("axios");
 const CHECK_USER = "http://127.0.0.1:5000/user/role";
 
 async function checkUser(tokenStr) {
@@ -25,4 +20,3 @@ async function checkUser(tokenStr) {
   }
 }
 
-export default checkUser;

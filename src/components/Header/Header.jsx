@@ -37,6 +37,8 @@ function Header() {
       navigate("/products");
     } else if (icon === "shopping-cart") {
       navigate("/cart");
+    } else if (icon === "edit") {
+      navigate("/admin/edit/pharmacy");
     } else if (icon === "right-from-bracket") {
       sessionStorage.removeItem("token");
       navigate("/login");
@@ -72,13 +74,17 @@ function Header() {
   }, []);
 
   React.useEffect(() => {
-    if (location.pathname === "/products") {
-      dispatch(deleteIcon("pills"));
-      dispatch(insertIcon("filter"));
-    } else if (location.pathname === "/cart") {
-      dispatch(replaceIcon(["filter", "pills"]));
+    if (admin) {
+      dispatch(insertIconsArray(["users", "edit", "right-from-bracket"]));
     } else {
-      dispatch(insertIconsArray(["user", "shopping-cart", "pills"]));
+      if (location.pathname === "/products") {
+        dispatch(deleteIcon("pills"));
+        dispatch(insertIcon("filter"));
+      } else if (location.pathname === "/cart") {
+        dispatch(replaceIcon(["filter", "pills"]));
+      } else {
+        dispatch(insertIconsArray(["user", "shopping-cart", "pills"]));
+      }
     }
   }, [location.pathname]);
   return (
