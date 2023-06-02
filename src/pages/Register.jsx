@@ -1,15 +1,15 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+
+import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../scss/register.scss";
 
 const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const regexEmail = /\S+@\S+\.\S+/;
 const REGISTER_URL = "http://127.0.0.1:5000/user/register";
 
-function Register() {
+const Register = () => {
   const userRef = React.useRef(null);
   const errRef = React.useRef(null);
 
@@ -81,7 +81,7 @@ function Register() {
     navigate("/login");
   };
   return (
-    <div className="container">
+    <div className="container-regl">
       <p
         ref={errRef}
         className={errMsg ? "errmsg" : "offscreen"}
@@ -121,7 +121,7 @@ function Register() {
             validEmailFocus && !validEmail ? "instructions" : "offscreen"
           }
         >
-          <FontAwesomeIcon icon={faInfoCircle} />
+          <FontAwesomeIcon icon="info-circle" />
           Must include @ and domain
           <br />
           <span> For example, test@gmail.com </span>
@@ -144,7 +144,7 @@ function Register() {
           id="pwdnote"
           className={pwdFocus && !validPwd ? "instructions" : "offscreen"}
         >
-          <FontAwesomeIcon icon={faInfoCircle} />
+          <FontAwesomeIcon icon="info-circle"/>
           8 to 24 characters.
           <br />
           Must include uppercase and lowercase letters, a number and a special
@@ -167,6 +167,6 @@ function Register() {
       </div>
     </div>
   );
-}
+};
 
 export default Register;

@@ -1,16 +1,14 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import "./Dropdown.scss";
+import { useDispatch } from "react-redux";
 
 import { setFilterParams } from "../../redux/slices/filterSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
-function Dropdown({ selected, setSelected, options }) {
+import "./Dropdown.scss";
+
+const Dropdown = ({ selected, options }) => {
   const [isActive, setActive] = React.useState(false);
   const dispatch = useDispatch();
-
-  let params = useSelector((state) => state.filterSlice.filterParams);
 
   const handleClick = ({ index, selected, item }) => {
     setActive(false);
@@ -32,7 +30,7 @@ function Dropdown({ selected, setSelected, options }) {
         onClick={() => setActive(!isActive)}
       >
         {selected}
-        <FontAwesomeIcon icon={isActive ? faAngleDown : faAngleRight} />
+        <FontAwesomeIcon icon={isActive ? "angle-down" : "angle-right"} />
       </div>
       {isActive && (
         <div className="dropdown-content">
@@ -53,6 +51,6 @@ function Dropdown({ selected, setSelected, options }) {
       )}
     </div>
   );
-}
+};
 
 export default Dropdown;

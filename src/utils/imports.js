@@ -1,5 +1,5 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
-
+import { fas } from "@fortawesome/free-solid-svg-icons";
 import {
   faShoppingCart,
   faUser,
@@ -9,8 +9,13 @@ import {
   faUsers,
   faPills,
   faEdit,
+  faAngleRight,
+  faAngleDown,
+  faInfoCircle,
+  faUserCheck,
+  faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
-import { fas } from "@fortawesome/free-solid-svg-icons";
+
 library.add(
   fas,
   faFilter,
@@ -20,5 +25,10 @@ library.add(
   faEdit,
   faPills,
   faUser,
-  faShoppingCart
+  faShoppingCart,
+  faAngleRight,
+  faAngleDown,
+  faInfoCircle,
+  faUserCheck,
+  faUserPlus
 );

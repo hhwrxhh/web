@@ -3,7 +3,7 @@ import axios from "axios";
 
 import "../scss/admin.scss";
 
-function EditUser() {
+const EditUser = () => {
   const [users, setUsers] = useState([]);
 
   const fetchUsers = async () => {
@@ -51,6 +51,6 @@ function EditUser() {
       </tbody>
     </table>
   );
-}
+};
 
 export default EditUser;

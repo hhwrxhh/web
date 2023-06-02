@@ -1,11 +1,12 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+
+import imageProfile from "../assets/img/test.png"
 import style from "../scss/profile.module.scss";
 
 const PROFILE_URL = "http://127.0.0.1:5000/user";
 
-function Profile() {
+const Profile = ()  => {
   const [user, setUser] = React.useState({});
   const [userName, setUserName] = React.useState("");
 
@@ -57,7 +58,7 @@ function Profile() {
     <div className={style.container}>
       <div className={style.profile}>
         <div className={style.profilePicture}>
-          <img src="img" alt="Product 2" />
+          <img src={imageProfile} alt="Product 2" />
         </div>
         <div className={style.profileInfo}>
           <h1>{user.user_name} </h1>

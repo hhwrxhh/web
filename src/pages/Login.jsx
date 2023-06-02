@@ -17,7 +17,7 @@ import "../scss/register.scss";
 const LOGIN_URL = "http://127.0.0.1:5000/user/login";
 const regexEmail = /\S+@\S+\.\S+/;
 
-function Login() {
+const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -51,7 +51,6 @@ function Login() {
       if (response.data.token !== "") {
         sessionStorage.setItem("token", response.data.token);
       }
-      setPwd("");
     } catch (err) {
       if (!err?.response) {
         alert("No Server Response");
@@ -71,9 +70,9 @@ function Login() {
     navigate("/products");
   };
   return (
-    <div className="container">
+    <div className="container-regl">
       <h1>Login</h1>
-      <form>
+      <form >
         <label>Email:</label>
         <input
           type="text"
@@ -109,7 +108,7 @@ function Login() {
           onChange={(e) => setPwd(e.target.value)}
         />
         <div className="recover">
-          <a href="#">Forgot the password?</a>
+          <a href="/">Forgot the password?</a>
         </div>
       </form>
       <button type="submit" onClick={handleSubmit}>
@@ -123,6 +122,6 @@ function Login() {
       </div>
     </div>
   );
-}
+};
 
 export default Login;

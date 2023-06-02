@@ -1,24 +1,20 @@
 import React from "react";
 import axios from "axios";
 
-import "./Sidebar.scss";
-import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Dropdown from "../Dropdown/Dropdown";
-
 import { useSelector, useDispatch } from "react-redux";
 import {
   clickFilterIcon,
   setSubmitClicked,
 } from "../../redux/slices/filterSlice";
-const options = [1, 2, 3];
+
+import Dropdown from "../Dropdown/Dropdown";
+import "./Sidebar.scss";
+
 let obj = [];
 
-function Sidebar() {
+const Sidebar = () => {
   const dispatch = useDispatch();
-  const sideBarRef = React.useRef(null);
   let filter = useSelector((state) => state.filterSlice.isClickedIcon);
-  let filterParams = useSelector((state) => state.filterSlice.isClickedSubmit);
 
   React.useEffect(() => {
     const fetchCategories = async () => {
@@ -95,6 +91,6 @@ function Sidebar() {
       </div>
     </div>
   );
-}
+};
 
 export default Sidebar;

@@ -1,13 +1,16 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
 import axios from "axios";
+
+import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
 import style from "../scss/editPills.module.scss";
 
 const EDIT_URL = "http://127.0.0.1:5000/drug/dosed/";
 
-function EditPills() {
+const EditPills = () =>  {
   const routeParams = useParams();
+  const navigate = useNavigate();
 
   const [dosedName, setDosedName] = React.useState("");
   const [dosedPrice, setDosedPrice] = React.useState("");
@@ -27,6 +30,7 @@ function EditPills() {
           headers: { Authorization: `Bearer ${tokenStr}` },
         }
       );
+      navigate("/products");
     } catch (err) {
       if (!err?.response) {
         alert("No Server Response");

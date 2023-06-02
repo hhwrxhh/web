@@ -1,4 +1,4 @@
-const axios = require("axios");
+import axios from "axios";
 const CHECK_USER = "http://127.0.0.1:5000/user/role";
 
 async function checkUser(tokenStr) {
@@ -15,7 +15,7 @@ async function checkUser(tokenStr) {
       throw new Error("Unknown user type");
     }
   } catch (error) {
-    console.log("Error", error);
+    // console.log("Error", error);
     throw error;
   }
 }

@@ -24,17 +24,17 @@ function Footer() {
         <h3>Common questions</h3>
         <ul>
           <li>
-            <a href="$" className="">
+            <a href="/" className="">
               About Company
             </a>
           </li>
           <li>
-            <a href="$" className="">
+            <a href="/" className="">
               delivery
             </a>
           </li>
           <li>
-            <a href="$" className="">
+            <a href="/" className="">
               Payment
             </a>
           </li>
