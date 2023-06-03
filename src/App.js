@@ -17,6 +17,8 @@ import Profile from "./pages/Profile";
 import FullProducts from "./pages/FullProduct";
 import Cart from "./pages/Cart";
 
+import Main from "./pages/Main";
+
 import "./scss/reset.scss";
 import PrivateRouteUser from "./components/PrivateRoute/PrivateRouteUser";
 import PrivateRouteAdmin from "./components/PrivateRoute/PrivateRouteAdmin";
@@ -26,9 +28,10 @@ function App() {
     <div>
       <Header />
       <Routes>
-        <Route element={<PrivateRouteUser />}></Route>
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route element={<PrivateRouteUser />}>
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/cart" element={<Cart />} />
+        </Route>
         <Route element={<PrivateRouteAdmin />}>
           <Route path="/admin/edit/users" element={<EditUser />} />
           <Route path="/admin/edit/pharmacy" element={<EditPillsTable />} />
@@ -37,6 +40,7 @@ function App() {
             element={<EditPills />}
           />
         </Route>
+        <Route path="/" element={<Main />} />
         <Route path="/products" element={<Products />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />

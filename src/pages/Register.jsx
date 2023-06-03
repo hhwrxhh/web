@@ -9,7 +9,7 @@ const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const regexEmail = /\S+@\S+\.\S+/;
 const REGISTER_URL = "http://127.0.0.1:5000/user/register";
 
-function Register() {
+const Register = () => {
   const userRef = React.useRef(null);
   const errRef = React.useRef(null);
 
@@ -81,7 +81,7 @@ function Register() {
     navigate("/login");
   };
   return (
-    <div className="container">
+    <div className="container-regl">
       <p
         ref={errRef}
         className={errMsg ? "errmsg" : "offscreen"}
@@ -167,6 +167,6 @@ function Register() {
       </div>
     </div>
   );
-}
+};
 
 export default Register;

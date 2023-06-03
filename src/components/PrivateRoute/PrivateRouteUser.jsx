@@ -1,26 +1,27 @@
 import { Navigate, Outlet } from "react-router-dom";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import checkUser from "./checkUser";
 
 const PrivateRouteUser = () => {
   const tokenStr = sessionStorage.getItem("token");
-  const [access, setAccess] = React.useState(false);
-  const [loading, setLoading] = React.useState(true);
+  const [access, setAccess] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-  React.useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const userType = await checkUser(tokenStr);
-        if (userType === "user") {
-          setAccess(true);
-        } else {
-          setAccess(false);
-        }
-        setLoading(false);
-      } catch (error) {
-        console.log("Error", error);
-        setLoading(false);
-      }
+  useEffect(() => {
+    const fetchData = () => {
+      checkUser(tokenStr)
+        .then((userType) => {
+          if (userType === "user") {
+            setAccess(true);
+          } else {
+            setAccess(false);
+          }
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.log("Error", error);
+          setLoading(false);
+        });
     };
     fetchData();
   }, []);

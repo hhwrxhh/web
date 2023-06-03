@@ -9,6 +9,7 @@ import {
   deleteIcon,
   replaceIcon,
 } from "../../redux/slices/iconSLice";
+
 import { clickFilterIcon } from "../../redux/slices/filterSlice";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -43,7 +44,6 @@ function Header() {
       sessionStorage.removeItem("token");
       navigate("/login");
       dispatch(deleteIcon("right-from-bracket"));
-      // setIcons([...iconsArray]);
     } else if (icon === "users") {
       navigate("/admin/edit/users");
     }
@@ -81,7 +81,7 @@ function Header() {
       } else if (location.pathname === "/cart") {
         dispatch(replaceIcon(["filter", "pills"]));
       } else {
-        dispatch(insertIconsArray(["user", "shopping-cart", "pills"]));
+        dispatch(replaceIcon(["filter", "pills"]));
       }
     }
   }, [location.pathname]);

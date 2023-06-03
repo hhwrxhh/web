@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addItem, minusItem, removeItem } from "../../redux/slices/cartSlice";
+import "@testing-library/jest-dom";
 
 const CartItem = ({
   fk_dosed_id,
@@ -9,9 +10,12 @@ const CartItem = ({
   price,
   dosed_count,
   image_url,
+  testid,
 }) => {
   const dispatch = useDispatch();
   const tokenStr = sessionStorage.getItem("token");
+  const [deleteItem, setDeleteItem] = React.useState(false);
+
   const onClickPlus = () => {
     dispatch(
       addItem({
@@ -20,11 +24,11 @@ const CartItem = ({
     );
 
     try {
-      const response = axios.put(
+      axios.put(
         "http://127.0.0.1:5000/cart",
         {
           fk_dosed_id,
-          count: ++dosed_count,
+          count: dosed_count + 1,
         },
         {
           headers: { Authorization: `Bearer ${tokenStr}` },
@@ -47,13 +51,14 @@ const CartItem = ({
         fk_dosed_id,
       })
     );
+
     if (dosed_count > 1) {
       try {
-        const response = axios.put(
+        axios.put(
           "http://127.0.0.1:5000/cart",
           {
             fk_dosed_id,
-            count: --dosed_count,
+            count: dosed_count - 1,
           },
           {
             headers: { Authorization: `Bearer ${tokenStr}` },
@@ -73,13 +78,13 @@ const CartItem = ({
 
   const onClickDelete = () => {
     try {
-      const tokenStr = sessionStorage.getItem("token");
-      const response = axios.delete("http://127.0.0.1:5000/cart", {
+      axios.delete("http://127.0.0.1:5000/cart", {
         headers: { Authorization: `Bearer ${tokenStr}` },
         data: {
           fk_dosed_id,
         },
       });
+      setDeleteItem(true);
     } catch (err) {
       if (!err?.response) {
         alert("No Server Response");
@@ -88,10 +93,16 @@ const CartItem = ({
       if (err.response?.status === 400) {
         alert("Some fields are empty");
       }
+      setDeleteItem(false);
     }
   };
+
+  if (deleteItem) {
+    return null; // Відображення нульового компонента, якщо елемент видалено
+  }
+
   return (
-    <div className="cart-item">
+    <div className="cart-item" data-testid={testid}>
       <img src={image_url} alt="Product Image" />
       <div className="cart-item-details">
         <h3>{dosed_title}</h3>
@@ -105,7 +116,11 @@ const CartItem = ({
             +
           </button>
         </div>
-        <button onClick={onClickDelete} className="cart-item-remove">
+        <button
+          onClick={onClickDelete}
+          className="cart-item-remove"
+          data-testid="cart-item-remove"
+        >
           Delete
         </button>
       </div>
