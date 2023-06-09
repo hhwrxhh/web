@@ -10,7 +10,6 @@ const CartItem = ({
   price,
   dosed_count,
   image_url,
-  testid,
 }) => {
   const dispatch = useDispatch();
   const tokenStr = sessionStorage.getItem("token");
@@ -69,9 +68,6 @@ const CartItem = ({
           alert("No Server Response");
           return;
         }
-        if (err.response?.status === 400) {
-          alert("Some fields are empty");
-        }
       }
     }
   };
@@ -89,9 +85,6 @@ const CartItem = ({
       if (!err?.response) {
         alert("No Server Response");
         return;
-      }
-      if (err.response?.status === 400) {
-        alert("Some fields are empty");
       }
       setDeleteItem(false);
       dispatch(

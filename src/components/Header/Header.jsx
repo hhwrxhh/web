@@ -14,6 +14,7 @@ import {
 import { clickFilterIcon } from "../../redux/slices/filterSlice";
 
 import checkUser from "../PrivateRoute/checkUser";
+import navigateHeader from "../../utils/navigateHeader";
 import styles from "./header.module.scss";
 
 const Header = () => {
@@ -25,24 +26,20 @@ const Header = () => {
 
   let iconsArray = icons;
   const handleNavigate = (icon) => {
-    if (icon === "user-check") {
-      navigate("/profile");
-    } else if (icon === "filter") {
+    let url = navigateHeader(icon);
+
+    if (icon === "filter") {
       dispatch(clickFilterIcon());
       return;
-    } else if (icon === "pills") {
-      navigate("/products");
-    } else if (icon === "shopping-cart") {
-      navigate("/cart");
-    } else if (icon === "edit") {
-      navigate("/admin/edit/pharmacy");
     } else if (icon === "right-from-bracket") {
       sessionStorage.removeItem("token");
       dispatch(insertIconsArray(["user", "shopping-cart", "pills"]));
       navigate("/login");
       dispatch(deleteIcon("right-from-bracket"));
-    } else if (icon === "users") {
-      navigate("/admin/edit/users");
+    }
+
+    if (url) {
+      navigate(url);
     }
   };
 
@@ -52,11 +49,12 @@ const Header = () => {
       try {
         const tokenStr = sessionStorage.getItem("token");
         const userType = await checkUser(tokenStr);
+
         if (userType === "admin") {
           dispatch(insertIconsArray(["users", "edit", "right-from-bracket"]));
         } else if (userType === "user") {
           dispatch(insertIcon("right-from-bracket"));
-          dispatch(replaceIcon(["user", "user-check"]))
+          dispatch(replaceIcon(["user", "user-check"]));
         }
       } catch (error) {
         // Обробка помилки
@@ -75,6 +73,7 @@ const Header = () => {
       dispatch(replaceIcon(["filter", "pills"]));
     }
   }, [location.pathname]);
+
   return (
     <div className={styles.container}>
       <a href="/" className={styles.logo}>

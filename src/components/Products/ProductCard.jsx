@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import "./productCard.scss";
 
-function ProductCard({ id, title, price, image }) {
+const ProductCard = ({ id, title, price, image }) => {
   return (
     <div className="product-card">
       <Link to={`/product/${id}`}>
@@ -16,6 +16,6 @@ function ProductCard({ id, title, price, image }) {
       </Link>
     </div>
   );
-}
+};
 
 export default ProductCard;

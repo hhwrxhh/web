@@ -15,7 +15,6 @@ async function checkUser(tokenStr) {
       throw new Error("Unknown user type");
     }
   } catch (error) {
-    // console.log("Error", error);
     throw error;
   }
 }

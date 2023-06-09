@@ -1,5 +1,7 @@
 import style from "./Cooporation.module.scss";
 import brand from "../../assets/img/brand.png";
+
+
 const Cooporation = () => {
   let arr = new Array(6).fill(brand);
   console.log(arr);

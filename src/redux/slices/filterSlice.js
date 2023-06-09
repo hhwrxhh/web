@@ -19,7 +19,7 @@ const filterSlice = createSlice({
       state.isClickedIcon = !state.isClickedIcon;
     },
     setFilterParams(state, action) {
-      state.filterParams = { ...state.filterParams, ...action.payload }; // створення нового об'єкту з додаванням нових ключів та значень
+      state.filterParams = { ...state.filterParams, ...action.payload };
     },
     setSubmitClicked(state, action) {
       state.isClickedSubmit = action.payload;
